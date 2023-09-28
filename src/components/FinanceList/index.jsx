@@ -1,4 +1,4 @@
-import { FinanceCard } from "./FinanceCard"
+import { FinanceCard } from "./FinanceCard";
 import styles from "./style.module.scss";
 
 export const FinanceList = ({ listFinances, removeFinance }) => {

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { HomePage } from "./pages/HomePage"
 import { ToastContainer } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 function App() {
   const [listFinances, setListFinances] = useState([]);

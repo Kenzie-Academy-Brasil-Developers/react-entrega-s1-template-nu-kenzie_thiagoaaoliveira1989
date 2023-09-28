@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { Input } from '../Input';
-import styles from './style.module.scss';
-import { Select } from '../Select';
+import { useState } from "react";
+import { Input } from "../Input";
+import styles from "./style.module.scss";
+import { Select } from "../Select";
 
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 
 export const FinanceForm = ({ addFinances }) => {
     const [description, setDescripion] = useState("");
     const [price, setPrice] = useState("");
-    const [type, setType] = useState(""); // Estado para armazenar o tipo selecionado
+    const [type, setType] = useState("");
 
 
 
     const handleSelectChange = (e) => {
-        setType(e.target.value); // Atualiza o estado com o valor selecionado
+        setType(e.target.value);
     }
 
     const submit = (e) => {
         e.preventDefault();
 
         if (description === "" || price === "" || type === "") {
-            toast.error('Preencha todos os campos!', {
+            toast.error("Preencha todos os campos!", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -67,7 +67,6 @@ export const FinanceForm = ({ addFinances }) => {
                 setValue={setPrice}
             />
 
-            {/* Adicione o evento onChange para capturar a seleção do usuário */}
             <Select
                 className={styles.inputOne}
                 label="Tipo de valor"
@@ -75,10 +74,9 @@ export const FinanceForm = ({ addFinances }) => {
                 value={type}
                 onChange={handleSelectChange}
                 options={[
-                    { label: 'Selecione o tipo', value: '', disabled: true },
-                    { label: 'Entrada', value: 'entrada' },
-                    { label: 'Saída', value: 'saida' },
-                    // Adicione outras opções conforme necessário
+                    { label: "Selecione o tipo", value: "", disabled: true },
+                    { label: "Entrada", value: "entrada" },
+                    { label: "Saída", value: "saida" },
                 ]}
             />
 
