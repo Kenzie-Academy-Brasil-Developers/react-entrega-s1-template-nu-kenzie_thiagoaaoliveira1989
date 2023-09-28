@@ -3,9 +3,28 @@ import styles from "./style.module.scss";
 export const Total = ({ listFinances }) => {
 
 
-    const valorTotal = listFinances.reduce((total, finance) => {
+    const valorEntrada = listFinances.filter((finance)=>{
+        return finance.type === 'entrada';
+    })
+
+    console.log(valorEntrada);
+
+    const valorTotalEntrada = valorEntrada.reduce((total, finance) => {
         return total + finance.price
     }, 0)
+
+
+
+    const valorSaida = listFinances.filter((finance)=>{
+        return finance.type === 'saida';
+    })
+
+    const valorTotalSaida = valorSaida.reduce((total, finance) => {
+        return total + finance.price
+    }, 0)
+
+
+    const valorTotal = valorTotalEntrada - valorTotalSaida;
 
     return (
         <div className={styles.total}>
