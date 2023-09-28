@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-primary: #FD377E;
     --color-primary-2: #E34981;
     --color-secondary: #03B898;
@@ -11,4 +11,50 @@
     --font-primary: 'Inter', sans-serif;
     --font-secondary: 'Nunito', sans-serif;
 
+}
+
+.container {
+    padding: 0 16.3125rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &.flex {
+        display: flex;
+        gap: 4rem;
+        flex-direction: row;
+        align-items: flex-start;
+
+    }
+
+    @media (max-width: 1125px) {
+        padding: 0 10rem;
+    }
+
+
+    @media (max-width: 939px) {
+        padding: 0 5rem;
+    }
+
+    @media (max-width: 773px) {
+        padding: 0 2rem;
+
+        &.flex {
+            flex-direction: column;
+        }
+    }
+
+}
+
+main{
+    width: 100vw;
+}
+
+.container__form-total{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 355px;
+    width: 100%;
 }

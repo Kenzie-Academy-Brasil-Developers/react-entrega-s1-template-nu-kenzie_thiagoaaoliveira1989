@@ -9,6 +9,14 @@
     border-radius: 8px;
     border: 2px solid var(--color-primary);
     background: var(--color-primary);
+    color: var(--color-grey-1);
+
+    color: #FFF;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 
     &:hover {
         border: 2px solid var(--color-primary-2);

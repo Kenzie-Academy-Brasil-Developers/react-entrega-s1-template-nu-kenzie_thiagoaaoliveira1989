@@ -1,0 +1,40 @@
+.flex {
+
+    width: 100%;
+    padding: 8px 14px 17px 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px 0px 0px 4px;
+    border-left: 4px solid var(--color-secondary, #03B898);
+    border-radius: 4px;
+    background: var(--grey-1, #F8F9FA);
+
+}
+
+.btnList {
+    cursor: pointer;
+    padding: 3px 9px;
+    border: 0;
+    border-radius: 2px;
+    background: var(--color-grey-2);
+    color: #212529;
+    font-family: var(--font-secondary);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+        background: var(--color-grey-4);
+        color: var(--color-grey-1);
+    }
+
+}
+
+.divValue {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

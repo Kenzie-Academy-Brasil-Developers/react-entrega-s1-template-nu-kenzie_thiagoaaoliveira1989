@@ -27,6 +27,22 @@
     }
 }
 
+.text {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+
+    &.one {
+        color: #868E96;
+        line-height: 1.25rem;
+    }
+
+    &.two {
+        color: #212529;
+        line-height: 22px;
+    }
+}
 
 .headline {
     font-family: var(--font-secondary);
@@ -34,12 +50,4 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.625rem;
-}
-
-.body {
-    font-family: var(--font-secondary);
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.375rem;
 }
