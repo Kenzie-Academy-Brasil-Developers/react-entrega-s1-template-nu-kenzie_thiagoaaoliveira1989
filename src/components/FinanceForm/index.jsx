@@ -15,14 +15,17 @@ export const FinanceForm = ({ addFinances }) => {
     const submit = (e) => {
         e.preventDefault();
 
-        console.log(addFinances);
-        // Passe o valor selecionado como argumento para addFinances
-        addFinances(description, Number(price), type);
+        if (description === "" || price === "" || type === "") {
+            alert("Preencha todos os campos");
+        } else {
+            addFinances(description, Number(price), type);
+            setDescripion("");
+            setPrice("");
+            setType("");
 
-        // Restaurar os estados para vazios após o envio
-        setDescripion("");
-        setPrice("");
-        setType("");
+        }
+
+
     }
 
     return (
@@ -56,6 +59,7 @@ export const FinanceForm = ({ addFinances }) => {
                 value={type}
                 onChange={handleSelectChange}
                 options={[
+                    { label: 'Selecione o tipo', value: '', disabled: true },
                     { label: 'Entrada', value: 'entrada' },
                     { label: 'Saída', value: 'saida' },
                     // Adicione outras opções conforme necessário

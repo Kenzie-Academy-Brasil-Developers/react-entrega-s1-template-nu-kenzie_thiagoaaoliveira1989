@@ -12,6 +12,10 @@
         line-height: 2.125rem;
         font-size: 1.375rem;
         font-weight: 700;
+
+        &.primary {
+            color: var(--color-primary);
+        }
     }
 
     &.three {

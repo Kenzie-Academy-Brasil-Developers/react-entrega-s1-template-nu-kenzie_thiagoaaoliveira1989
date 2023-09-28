@@ -4,7 +4,7 @@ import { Header } from "../../components/Header";
 import { Total } from "../../components/Total";
 
 
-export const HomePage = ({ listFinances, addFinances }) => {
+export const HomePage = ({ listFinances, addFinances, removeFinance }) => {
     return (
         <>
             <Header />
@@ -14,7 +14,7 @@ export const HomePage = ({ listFinances, addFinances }) => {
                         <FinanceForm addFinances={addFinances} />
                         <Total listFinances={listFinances} />
                     </div>
-                    <FinanceList listFinances={listFinances} />
+                    <FinanceList removeFinance={removeFinance} listFinances={listFinances} />
                 </section>
             </main>
         </>
