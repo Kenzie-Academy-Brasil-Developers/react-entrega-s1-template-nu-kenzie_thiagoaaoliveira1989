@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { HomePage } from "./pages/HomePage"
+import { ToastContainer } from "react-toastify";
+
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function App() {
   const [listFinances, setListFinances] = useState([]);
@@ -19,17 +23,21 @@ function App() {
     setNextId(nextId + 1);
   }
 
-  const removeFinance = (id) => {
+  const removeFinance = (id, description) => {
     const newListFinances = listFinances.filter((finance) => {
       return finance.id !== id;
     });
 
     setListFinances(newListFinances);
+    toast.success(`${description} excluido do resumo financeiro!`);
+
   }
 
   return (
     <>
       <HomePage removeFinance={removeFinance} listFinances={listFinances} addFinances={addFinances} />
+      <ToastContainer />
+
     </>
   )
 }

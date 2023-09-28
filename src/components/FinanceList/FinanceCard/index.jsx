@@ -12,7 +12,7 @@ export const FinanceCard = ({ removeFinance, id, description, price, type }) => 
                 </div>
                 <div className={styles.divValue}>
                     <p className="title four"> {price.toLocaleString("pt-br", { style: "currency", currency: "BRL" })} </p>
-                    <button onClick={() => removeFinance(id)} className={styles.btnList}>Excluir</button>
+                    <button onClick={() => removeFinance(id, description)} className={styles.btnList}>Excluir</button>
                 </div>
             </li>
 

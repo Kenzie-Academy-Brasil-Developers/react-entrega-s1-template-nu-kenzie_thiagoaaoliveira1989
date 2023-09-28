@@ -3,10 +3,16 @@ import { Input } from '../Input';
 import styles from './style.module.scss';
 import { Select } from '../Select';
 
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
+
 export const FinanceForm = ({ addFinances }) => {
     const [description, setDescripion] = useState("");
     const [price, setPrice] = useState("");
     const [type, setType] = useState(""); // Estado para armazenar o tipo selecionado
+
+
 
     const handleSelectChange = (e) => {
         setType(e.target.value); // Atualiza o estado com o valor selecionado
@@ -16,12 +22,22 @@ export const FinanceForm = ({ addFinances }) => {
         e.preventDefault();
 
         if (description === "" || price === "" || type === "") {
-            alert("Preencha todos os campos");
+            toast.error('Preencha todos os campos!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         } else {
             addFinances(description, Number(price), type);
             setDescripion("");
             setPrice("");
             setType("");
+            toast.success(`${description} adicionado ao resumo financeiro!`);
 
         }
 
